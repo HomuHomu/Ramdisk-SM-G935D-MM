@@ -172,5 +172,8 @@ if [ ! -d "/su/bin" ]; then
   fi
 fi
 
+# video and front camera fix
+/sbin/busybox umount /dsp
+/sbin/busybox mount -t ext4 /dev/block/sdd7 /dsp
 # start daemon
 exec /su/bin/daemonsu --auto-daemon
